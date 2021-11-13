@@ -20,3 +20,28 @@ function arrayDeduping (array) {
   }
   return arr;
 }
+
+<!-- Recursion Solution -->
+
+<!-- 
+given an array
+want to remove duplicates
+needs to call it self
+-->
+
+const arrayDedupe = (array) => {
+  helper(array, 0)
+}
+
+const arrayDeduping = (array, index) => {
+  let result = [];
+  if (array.length == 0) {
+    return result;
+  }
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] != array[0]) {
+      result.push(array[i]);
+    }
+  }
+  return arrayDeduping(result);
+}
